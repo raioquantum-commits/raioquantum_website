@@ -1,0 +1,115 @@
+ body {
+     font-family: 'Inter', sans-serif;
+     background-color: #fff;
+     color: #000;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     margin: 0;
+ }
+
+ nav a {
+     font-weight: 800;
+     font-size: 5rem;
+     line-height: 1.1;
+     display: block;
+     text-decoration: none;
+     color: #000;
+     user-select: none;
+ }
+
+ nav a:not(:last-child) {
+     margin-bottom: 0;
+ }
+
+ header nav a.home-link {
+     font-weight: 400;
+     font-size: 18px;
+     user-select: auto;
+ }
+
+ .qr-code {
+     width: 50px;
+     height: 50px;
+ }
+
+ .scroll-btn {
+     background-color: #FF3B00;
+     width: 48px;
+     height: 48px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     transform: rotate(12deg);
+     border: none;
+     cursor: pointer;
+     margin-top: 2.5rem;
+ }
+
+ .scroll-btn svg {
+     stroke: #fff;
+     stroke-width: 2;
+     margin-bottom: 0.25rem;
+     width: 16px;
+     height: 16px;
+ }
+
+ .scroll-btn svg:last-child {
+     margin-bottom: 0;
+ }
+
+ footer h1 {
+     font-weight: 800;
+     font-size: 15rem;
+     line-height: 1;
+     color: #FF3B00;
+     user-select: none;
+     margin: 0;
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+     flex-wrap: nowrap;
+ }
+
+ footer .registered {
+     border-radius: 50%;
+     width: 120px;
+     height: 120px;
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: 1rem;
+     position: relative;
+     top: 40px;
+     font-weight: 800;
+   
+     line-height: 1;
+     user-select: none;
+ }
+
+ @media (max-width: 992px) {
+     nav a {
+         font-size: 2rem;
+     }
+
+     footer h1 {
+         font-size: 80px;
+     }
+
+     footer .registered {
+         width: 60px;
+         height: 60px;
+         font-size: 40px;
+         margin-left: 0.5rem;
+         top: 20px;
+     }
+
+     main {
+         flex-direction: column !important;
+     }
+
+     .scroll-btn {
+         margin-top: 1.5rem;
+     }
+ }

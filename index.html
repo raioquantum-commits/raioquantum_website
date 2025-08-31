@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Agentic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .float-anim {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .rotate-box {
+      transform: rotate(45deg);
+    }
+
+    .rotate-text {
+      transform: rotate(-45deg);
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 5s linear infinite;
+    }
+
+    .hover-bar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #563fb2;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+      z-index: -1;
+    }
+
+    .hover-bar:hover::before {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black flex flex-col min-h-screen overflow-x-hidden ">
+  <div class="container mx-auto flex flex-col flex-grow px-4 md:px-8 lg:px-12">
+    <div class="main min-h-screen fixed flex justify-between flex-col pb-5">
+      <!-- ✅ HEADER -->
+      <header class="flex justify-between items-center py-4 md:py-6 mb-4 md:mb-6 z-10" style="z-index: 999;">
+        <nav style="display: flex; flex-direction: column; align-items: center;">
+          <img class="mb-6" src="https://avatars.githubusercontent.com/u/48642104?s=200&v=4" style="width: 60px;" alt="">
+          <a href="#" class="text-sm md:text-base font-medium hover:text-[#563fb2] transition">HOME</a>
+        </nav>
+        <div class="top-4 md:top-6 right-4 md:right-6 absolute bg-white rounded-2xl p-2 md:p-3 shadow-md fixed">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://yourwebsite.com" alt="QR Code"
+            class="w-10 h-10 md:w-16 md:h-16" />
+        </div>
+      </header>
+
+      <!-- ✅ MAIN NAVIGATION + CONTENT -->
+      <main class="mt-8 md:mt-10 flex flex-col lg:flex-row gap-10 lg:gap-20 px-2 md:px-6">
+
+        <!-- LEFT NAVIGATION -->
+        <nav class="flex flex-col space-y-4 md:space-y-5 lg:w-[50%] font-extrabold leading-[1] w-full">
+          <!-- WORK -->
+          <a href="#work" class="group hover-bar flex items-center justify-between 
+    whitespace-nowrap text-[clamp(2rem,8vw,6rem)] leading-none font-extrabold 
+    text-black hover:text-white transition-colors text-[#7c8ee4] px-2 md:px-6 relative w-full">
+            <span>WORK</span>
+            <span
+              class="text-white text-[clamp(1.2rem,4vw,3.5rem)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">↓</span>
+          </a>
+
+          <!-- ABOUT -->
+          <a href="#about" class="group hover-bar flex items-center justify-between 
+    whitespace-nowrap text-[clamp(2rem,8vw,6rem)] leading-none font-extrabold 
+    text-black hover:text-white transition-colors px-2 md:px-6 relative w-full">
+            <span>ABOUT</span>
+            <span
+              class="text-white text-[clamp(1.2rem,4vw,3.5rem)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">↓</span>
+          </a>
+
+          <!-- SERVICES -->
+          <a href="#services" class="group hover-bar flex items-center justify-between 
+    whitespace-nowrap text-[clamp(2rem,8vw,6rem)] leading-none font-extrabold 
+    text-black hover:text-white transition-colors px-2 md:px-6 relative w-full">
+            <span>SERVICES</span>
+            <span
+              class="text-white text-[clamp(1.2rem,4vw,3.5rem)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">↓</span>
+          </a>
+
+          <!-- CONTACT -->
+          <a href="#contact" class="group hover-bar flex items-center justify-between 
+    whitespace-nowrap text-[clamp(2rem,8vw,6rem)] leading-none font-extrabold 
+    text-black hover:text-white transition-colors px-2 md:px-6 relative w-full">
+            <span>CONTACT</span>
+            <span
+              class="text-white text-[clamp(1.2rem,4vw,3.5rem)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">↓</span>
+          </a>
+        </nav>
+
+
+        <!-- RIGHT SIDE CONTENT -->
+        <section class="lg:ms-auto max-w-full md:max-w-xl text-center lg:text-left px-2">
+          <p class="mb-2 md:mb-4 text-base md:text-xl font-semibold text-gray-800">Elevating Digital Excellence.</p>
+          <p class="text-sm md:text-lg text-gray-600 leading-relaxed">
+            We specialize in <span class="font-bold text-[#563fb2]">web design</span>,
+            <span class="font-bold text-[#563fb2]">development</span>, UI/UX, and product design.
+            Transform your online presence with our creative expertise.
+          </p>
+          <div class="mt-6 md:mt-10 flex justify-center lg:justify-start">
+            <div class="w-8 h-8 md:w-10 md:h-10 bg-[#563fb2] animate-spin-slow"></div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ✅ BRAND NAME -->
+      <section class="flex items-center justify-center text-center lg:text-left mb-10 md:mb-16 w-full">
+        <h1
+          class="font-extrabold w-full whitespace-nowrap text-[clamp(2rem,12vw,13.5rem)] leading-none text-[#563fb2] flex justify-center lg:justify-start items-center"
+          style="font-family: 'Inter Tight', sans-serif; font-weight: 800;">
+          <span>Raioquantum</span>
+          <span
+            class="ml-2 sm:ml-3 rounded-full flex-shrink-0 w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 flex justify-center items-center font-extrabold relative top-1 text-lg sm:text-xl md:text-4xl bg-white border-2 md:border-4 border-[#7c8ee4] text-[#7c8ee4]">
+            R
+          </span>
+        </h1>
+      </section>
+
+    </div>
+    <div class="min-h-screen"></div>
+    <div class="w-full bg-white z-50">
+
+      <div class="bg-white z-10 w-full">
+        <div id="work" class="space-y-24 bg-white z-10">
+          <section
+            class="min-h-[80vh] bg-orange-500 text-white rounded-2xl py-16 px-6 lg:px-16 flex items-center shadow-2xl sticky top-[80px]">
+            <div class="grid lg:grid-cols-2 gap-10 items-center w-full">
+              <div class="space-y-6">
+                <p class="text-sm uppercase tracking-widest text-gray-200">(WORK)</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold">Aurora Branding</h2>
+                <p class="text-lg md:text-xl">Complete brand identity design for Aurora Co.</p>
+                <a href="#" class="inline-block mt-4 text-lg font-semibold hover:underline hover:text-black">View
+                  Project
+                  →</a>
+              </div>
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="absolute -z-10 w-20 h-20 md:w-[100px] md:h-[100px] bg-gradient-to-r from-black to-blue-100 rounded-full blur-3xl opacity-60 animate-pulse">
+                </div>
+                <img src="./bahbeta.png"
+                  class="p-8 md:p-12 relative rounded-2xl shadow-2xl max-w-full lg:max-w-[700px]" />
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="min-h-[80vh] bg-yellow-400 text-black rounded-2xl py-16 px-6 lg:px-16 flex items-center shadow-2xl sticky top-[80px]">
+            <div class="grid lg:grid-cols-2 gap-10 items-center w-full">
+              <div class="space-y-6">
+                <p class="text-sm uppercase tracking-widest text-gray-700">(WORK)</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold">Solar App</h2>
+                <p class="text-lg md:text-xl">A sleek solar energy monitoring mobile app.</p>
+                <a href="#" class="inline-block mt-4 text-lg font-semibold hover:underline hover:text-[#563fb2]">View
+                  Project →</a>
+              </div>
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="absolute -z-10 w-20 h-20 md:w-[100px] md:h-[100px] bg-gradient-to-r from-black to-blue-100 rounded-full blur-3xl opacity-60 animate-pulse">
+                </div>
+                <img src="https://framerusercontent.com/images/OtJ2ft6nFsZVC00fNfqhWqlmuA.png"
+                  class="p-8 md:p-12 relative rounded-2xl shadow-2xl max-w-full lg:max-w-[700px]" />
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="min-h-[80vh] bg-red-600 text-white rounded-2xl py-16 px-6 lg:px-16 flex items-center shadow-2xl sticky top-[80px]">
+            <div class="grid lg:grid-cols-2 gap-10 items-center w-full">
+              <div class="space-y-6">
+                <p class="text-sm uppercase tracking-widest text-gray-200">(WORK)</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold">Neon Dashboard</h2>
+                <p class="text-lg md:text-xl">Data-driven dashboard with futuristic UI.</p>
+                <a href="#" class="inline-block mt-4 text-lg font-semibold hover:underline hover:text-yellow-200">View
+                  Project →</a>
+              </div>
+              <div class="relative flex justify-center items-center">
+                <div
+                  class="absolute -z-10 w-20 h-20 md:w-[100px] md:h-[100px] bg-gradient-to-r from-purple-400 to-yellow-400 rounded-full blur-3xl opacity-60 animate-pulse">
+                </div>
+                <img src="./tmb.png"
+                  class="p-8 md:p-12 relative rounded-2xl shadow-2xl max-w-full lg:max-w-[700px]" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+      </div>
+      <!-- ✅ ABOUT SECTION -->
+      <section id="about"
+        class="py-12 md:py-20 bg-white z-10 flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-3xl mx-auto flex flex-col items-center justify-center">
+          <div class="mt-6 md:mt-10">
+            <div class="w-6 h-6 md:w-8 md:h-8 mb-3 md:mb-4 bg-[#563fb2] animate-spin-slow"></div>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mt-4 md:mt-6 mb-4 md:mb-6">(ABOUT US)</h2>
+
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 px-2 md:px-0">
+            At Agentic, we are a team of dedicated creatives driven by the desire to redefine online experiences.
+          </p>
+        </div>
+
+        <div class="mt-8 md:mt-12 flex justify-center w-full px-4">
+          <img src="./cohost.png"
+            class="rounded-2xl w-full max-w-md sm:max-w-2xl md:max-w-3xl float-anim" />
+        </div>
+      </section>
+
+      <!-- ✅ SERVICES SECTION -->
+      <section id="services"
+        class="py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-white z-10 px-4">
+        <div>
+          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Our Services</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
+            Web Design, UI/UX, Development, Branding, and Product Strategy.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://img.freepik.com/vecteurs-libre/illustration-gens-affaires_53876-58981.jpg"
+            class="rounded-2xl w-full max-w-md sm:max-w-lg lg:max-w-full" />
+        </div>
+      </section>
+
+      <!-- ✅ OUR TEAM -->
+      <section class="py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-gray-50 z-10 px-4">
+        <div class="flex justify-center">
+          <img src="https://www.nicepng.com/png/detail/31-311269_28-collection-of-teamwork-clipart-png-part-of.png"
+            class="rounded-2xl w-full max-w-md sm:max-w-lg lg:max-w-full float-anim" />
+        </div>
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Our Team</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
+            A passionate group of designers, developers, and strategists working together.
+          </p>
+        </div>
+      </section>
+
+      <!-- ✅ CONTACT -->
+      <section id="contact"
+        class="py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-white z-10 px-4">
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6">Contact Us</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 mb-4 md:mb-6">
+            Let’s build something amazing together.
+          </p>
+          <a href="mailto:hello@agentic.com"
+            class="inline-block bg-[#563fb2] text-white text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-xl hover:bg-black transition">
+            📧 hello@agentic.com
+          </a>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://www.vhv.rs/dpng/d/369-3698049_background-images-for-contact-us-page-hd-png.png"
+            class="rounded-2xl w-full max-w-md sm:max-w-lg lg:max-w-full" />
+        </div>
+      </section>
+      <section id="services" class="bg-white">
+        <div class="flex flex-col lg:flex-row">
+          <!-- LEFT NUMBER (desktop) -->
+          <div class="hidden lg:flex w-1/2 h-screen items-center justify-center sticky top-0">
+            <div
+              class="w-32 h-32 flex items-center justify-center text-white text-5xl font-bold bg-[#7c8ee4] rotate-box">
+              <span id="currentNumber" class="rotate-text">1</span>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="w-full lg:w-1/2">
+            <!-- repeat -->
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">Web Design and Development</h2>
+              <p>We build stunning and robust websites...</p>
+            </section>
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">UI/UX Design</h2>
+              <p>Elevate your user experience with Agentic's UI/UX design services.</p>
+            </section>
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">Branding & Identity</h2>
+              <p>We build strong, memorable brand identities...</p>
+            </section>
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">Product Strategy</h2>
+              <p>We help refine and execute product strategies.</p>
+            </section>
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">Mobile App Development</h2>
+              <p>Delivering high-performing and intuitive mobile apps.</p>
+            </section>
+            <section class="service-step min-h-[80vh] lg:min-h-screen flex flex-col justify-center p-10">
+              <h2 class="text-3xl font-bold mb-4">Digital Marketing</h2>
+              <p>SEO, social media marketing, and paid campaigns for growth.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <div class="min-h-screen bg-white pb-16">
+        <footer class="relative bg-black text-white rounded-[20px] overflow-hidden px-10 py-16 min-h-screen ">
+
+          <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 mt-20">
+            <div>
+              <p class="text-xs uppercase tracking-widest mb-4 text-gray-400">(LET’S CONNECT)</p>
+              <h3 class="text-3xl md:text-4xl font-bold mb-2">hello@agentic.com</h3>
+              <a href="mailto:hello@agentic.com" class="text-2xl md:text-3xl font-bold hover:text-[#563fb2] transition">
+                Book a Call
+              </a>
+            </div>
+            <div class="text-left md:text-right">
+              <p class="text-xs uppercase tracking-widest mb-4 text-gray-400">(FOLLOW US)</p>
+              <ul class="space-y-2 font-medium text-sm md:text-base">
+                <li><a href="#" class="hover:text-[#563fb2] transition">TWITTER</a></li>
+                <li><a href="#" class="hover:text-[#563fb2] transition">FRAMER</a></li>
+                <li><a href="#" class="hover:text-[#563fb2] transition">LINKEDIN</a></li>
+                <li><a href="#" class="hover:text-[#563fb2] transition">INSTAGRAM</a></li>
+                <li><a href="#" class="hover:text-[#563fb2] transition">LICENSING</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Big AGENTIC -->
+          <section class="absolute bottom-10 left-0 items-center justify-center text-center lg:text-left mb-10 md:mb-16 w-full">
+        <h1
+          class="font-extrabold w-full whitespace-nowrap text-[clamp(2rem,12vw,13.5rem)] leading-none text-[#ffffff] flex justify-center lg:justify-start px-10 items-center"
+          style="font-family: 'Inter Tight', sans-serif; font-weight: 800;">
+          <span>Raioquantum</span>
+          <span
+            class="ml-2 sm:ml-3 rounded-full flex-shrink-0 w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 flex justify-center items-center font-extrabold relative top-1 text-lg sm:text-xl md:text-4xl border-2 md:border-4 border-[#7c8ee4] text-[#7c8ee4]">
+            R
+          </span>
+        </h1>
+      </section>
+
+        </footer>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    // Counting logic
+    const numberSpan = document.getElementById("currentNumber");
+    const steps = document.querySelectorAll("#services .service-step");
+
+    if (numberSpan && steps.length) {
+      steps.forEach((sec, i) => sec.dataset.index = String(i + 1));
+      numberSpan.textContent = "1";
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target.dataset.index) {
+            numberSpan.textContent = entry.target.dataset.index;
+          }
+        });
+      }, { threshold: 0.6 });
+
+      steps.forEach(sec => io.observe(sec));
+    }
+  </script>
+</body>
+
+</html>
